@@ -1,0 +1,36 @@
+
+.admin-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.admin-form input[type="text"],
+.admin-form input[type="url"],
+.admin-form input[type="date"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.admin-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.admin-form {
+    padding-bottom: 100px;
+}

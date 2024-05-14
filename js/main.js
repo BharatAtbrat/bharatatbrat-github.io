@@ -366,7 +366,7 @@ var SendMail = function () {
                         error = "Server is currently unavailable!";
                         break;
                     default:
-                        error = "Unespected error, please try again later.";
+                        error = "Unexpected error, please try again later.";
                 }
                 if (error) {
                     alert(error);
@@ -378,3 +378,31 @@ var SendMail = function () {
         alert('Your email is not in valid format');
     }
 };
+
+
+
+// Function to fetch job listings from session storage and display them
+function displaySessionJobListings() {
+    let listings = JSON.parse(sessionStorage.getItem('sessionJobListings')) || [];
+
+    const tbody = document.getElementById('t_body');
+    tbody.innerHTML = ''; // Clear any existing rows
+
+    listings.forEach(job => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${job.jobName}</td>
+            <td>${job.company}</td>
+            <td>${job.city}</td>
+            <td>${job.jobType}</td>
+            <td>${job.dueDate}</td>
+            <td><a href="${job.link}" target="_blank">Apply</a></td>
+        `;
+
+        tbody.appendChild(row);
+    });
+}
+
+// Call displaySessionJobListings on page load
+window.onload = displaySessionJobListings;

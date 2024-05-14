@@ -73,6 +73,23 @@ input, textarea, select
     margin-top: -105px;
 }
 
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.search-button .fa-search {
+    font-size: 16px; 
+    color: #333; 
+}
+
+.search-button:focus {
+    outline: none;
+}
+
 .search-form
 {
     text-align: center;
@@ -119,14 +136,13 @@ input, textarea, select
 }
 
 .table {
-    font-family: 'Montserrat',sans-serif,Arial;
-    height: 100vh;
-    display:grid;
-    font-size:1rem;
+    font-family: 'Montserrat', sans-serif, Arial;
+    font-size: 1rem;
     background-color: #f9fbff;
     border-collapse: collapse;
     box-shadow: 0 5px 10px #e1e5ee;
-    overflow:hidden;
+    width: 100%; 
+    table-layout: fixed; 
     thead{
     }
 
@@ -150,6 +166,11 @@ input, textarea, select
     }
 
 }
+.table2 {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
 .header-holder
 {
     padding-top: 150px;
@@ -640,9 +661,9 @@ ul.archive-list li span
 .grid 
 {
     width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+    height: 400px; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
     display: block;
 }
 
@@ -1349,7 +1370,12 @@ li.left-footer-content.mobile
     }
 
 }
-
+@media screen and (max-width: 768px) {
+    .table {
+      overflow-x: auto;
+    }
+  }
+  
 @media screen and (max-width: 650px) { 
 
     .header-holder 
